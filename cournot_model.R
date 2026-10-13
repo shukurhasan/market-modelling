@@ -33,7 +33,9 @@ plot(q, best_response(q), type = "l", lwd = 2, col = "steelblue",
      cex.main = 2)
 lines(best_response(q), q, lwd = 2, col = "firebrick")
 points(cournot_q, cournot_q, pch = 19, cex = 1.5)
+points(collude_q, collude_q, pch = 17, cex = 1.5)
 text(cournot_q + 0.5, cournot_q + 2, "Cournot Equilibrium", pos = 4, cex = 1.5)
+text(collude_q, collude_q - 1, "Collusion", pos = 1, cex = 1.5)
 legend(x = 50, y = 80, bty = "n", lwd = 2, col = c("steelblue", "firebrick"),
        legend = c("B's best response to A", "A's best response to B"), cex = 1.5)
 
@@ -41,11 +43,11 @@ legend(x = 50, y = 80, bty = "n", lwd = 2, col = c("steelblue", "firebrick"),
 n <- 1:10
 plot(n, price_n(n), type = "b", pch = 19, col = "steelblue", lwd = 2,
      ylim = c(0, 100), xlab = "Number of firms",
-     ylab = "", cex.lab = 1.5, cex.axis = 1.2,
-     main = "Number of firms vs price and profit",
+     ylab = "Dollars", cex.lab = 1.5, cex.axis = 1.2,
+     main = "Number of firms vs market price",
      cex.main = 2)
-lines(n, profit_each(n) / 10, type = "b", pch = 17, col = "firebrick", lwd = 2)
-legend(x = 7, y = 100, bty = "n", lwd = 2, col = c("steelblue", "firebrick"),
-       legend = c("Market price", "Profit per firm / 10"), cex = 1.5)
+abline(h = cost, lty = 3, lwd = 1.5, col = "darkgreen")
+text(2, cost + 3, "unit cost", cex = 1.5)
+text(9, cost + 12, "market price", cex = 1.5)
 
 
